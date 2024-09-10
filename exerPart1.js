@@ -14,13 +14,11 @@ console.log(findMax([1,2,3,6,5,4,9,8,7])); */
 
 
 //EXERCICE 3
-/* function display(command) {
-    return "You purchased " + command.quantity + " units of " + command.product + " for " + command.price;
+/* function display(quantity,product,price) {
+    return `You purchased ${quantity} units of ${product} for ${price}`;
 }
-
-let newCommand = {quantity: 3, product: 'biscuit', price: 500}
-console.log(display(newCommand))
- */
+console.log(display(3,'biscuit',500))  */
+ 
 
 
 
@@ -74,15 +72,7 @@ console.log(newArray(example))   */
 
 
 // EXERCICE 9
-/* let example = [{title:'val', pages:51},
-    {title:'val1' , pages:500},
-    {title:'val2' , pages:200},
-    {title:'val3' , pages:651},
-    {title:'val4' , pages:0},
-    {title:'val5' , pages:651},
-    {title:'val6' , pages:499}]
-
-console.log(example.filter(a => a.pages > 300))   */
+/* library.filter(book => book.pages > 300)   */
 
 
 

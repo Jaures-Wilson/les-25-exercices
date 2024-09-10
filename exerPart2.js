@@ -71,20 +71,13 @@ console.log(characterDeleteRepetitive(exampleString))  */
 
 
 // EXERCICE 7
-/* let sum = 0;
-function sumCubedNumbers(number){
-    if(number >= 1){
-        sum += Math.pow(number,3);
-        sumCubedNumbers(number-1)
-    } else {
-        return "enter a positive number greater than 1 !!!";
-    } 
-    return sum;
+/* function sumCubedNumbers(number){
+    if(number === 0){
+        return 0;
+    }
+    return Math.pow(number,3) + sumCubedNumbers(number - 1);
 }
-
-console.log(sumCubedNumbers(3))  */
-
-
+console.log(sumCubedNumbers(3))   */
 
 
 
