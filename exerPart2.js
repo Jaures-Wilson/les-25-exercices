@@ -154,7 +154,7 @@ console.log(cylinderExample.volume())   */
         setTimeout(() => {clock(second-1)},1000);
     }
 }
-clock(10)    */
+clock(10)    */ 
 
 
 
@@ -168,12 +168,11 @@ console.log(checkIfStringIsLowerCaseOrUpperCase("andkajNdza"))  */
 
 
 
-
 // EXERCICE 15
-/* function add(...arg){
+/* function add(num1,num2){
     return new Promise((resolve,reject) => {
-        if(arg.length === 2){
-            resolve(arg[0]+arg[1])
+        if(arguments.length === 2){
+            resolve(num1+num2)
         }else{
             reject('Must provide two parameters')
         }
@@ -185,6 +184,6 @@ add(1,5)
     })
     .catch((error)=>{
         console.log(error)
-    })   */
+    })    */
 
         

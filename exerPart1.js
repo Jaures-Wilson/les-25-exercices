@@ -38,16 +38,19 @@ console.log(combinedArr([984,54,684,6841,35,84],[651,98,65,684,5.1,91,3541,651,9
     model : 'toyota',
     year : 'unknown'
 }
-const {make : val1, model : val2} = car;
-console.log(val1,val2)  */
+function destructionOnCar(obj){
+    const {make : val1, model : val2} = obj
+    return [val1, val2]
+}
+console.log(destructionOnCar(car))    */
 
 
 
 // EXERCICE 6 
-const calculateArea = (radius) => {
+/* const calculateArea = (radius) => {
      return radius !== undefined ? radius * radius * Math.PI : "radius is missing"
 }
-console.log(calculateArea(4))  
+console.log(calculateArea(4))   */
 
 
 
@@ -56,8 +59,8 @@ console.log(calculateArea(4))
     let amount = arg.reduce((accumulator, currentValue) => accumulator += currentValue ,0)
     return Math.round(amount/arg.length*100)/100;
 }
-console.log(average(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,99,-150)); 
-  */
+console.log(average(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,99,-150));  */
+  
 
 
 //EXERCICE 8
@@ -66,7 +69,7 @@ console.log(average(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,99,-150));
 }
 
 let example = ["koki", "couscous", "banane malaxée", "eren yagers", ""];
-console.log(newArray(example))   */
+console.log(newArray(example))   */ 
 
 
 
