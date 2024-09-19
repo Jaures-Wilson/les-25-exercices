@@ -1,6 +1,6 @@
 const {
     FindTheRightNumber,
-    daysLeftUntilNextChrisams,
+    daysLeftUntilNextChristmas,
     productAndDivisionionOfTwoNumber,
     getLongestString,
     highNumber,
@@ -12,24 +12,50 @@ const {
     deletePropertyOfArray,
     calculateVolumeCylinder,
     checkIfStringIsLowerCaseOrUpperCase,
+    clock,
     add
 } = require("./exerPart2")
 
 
 // EXERCICE 1
-describe("the function permit to verify if the user have the good number", () =>{ 
-    test('the function should return a string', () => {
-        expect(FindTheRightNumber(5)).toBe('Not matched');
-    }); 
+describe("the function permit to verify if the user have the good number", () =>{
+    
+    beforeEach(() => {
+        jest.spyOn(Math, 'random').mockReturnValue(0.4); 
+    });
+
+    afterEach(() => {
+        jest.spyOn(Math, 'random').mockRestore(); 
+    }) 
+
+    test('should return "Good Work" when the random number equals inputNumber', () => {
+        expect(FindTheRightNumber(5)).toBe('Good Work');
+    });
+
+    test('should return "Not matched" when the random number does not equal inputNumber', () => {
+        expect(FindTheRightNumber(3)).toBe('Not matched');
+    })     
 })
+
 
 
 // EXERCICE 2
-describe("the function return the number of day before Christmas", () =>{ 
-    test('the function should return a value', () => {
-        expect(daysLeftUntilNextChrisams()).toStrictEqual(98);
-    }); 
+describe('daysLeftUntilNextChristmas', () => {
+    beforeAll(() => {
+        jest.useFakeTimers();
+    });
+
+    afterAll(() => {
+        jest.useRealTimers();
+    });
+
+    test('should return the correct number of days when today is before Christmas', () => {
+        const exampleDate = new Date(2023, 11, 1); 
+        jest.setSystemTime(exampleDate);
+        expect(daysLeftUntilNextChristmas()).toBe(24); 
+    });
 })
+
 
 
 // EXERCICE 3
@@ -96,6 +122,7 @@ describe("the function extract out the values at the specified indexes from a ar
 }) 
 
 
+
 // EXERCICE 11
 describe("the function permit to delete a property", () =>{ 
     test('the function should return a object', () => {
@@ -115,7 +142,28 @@ describe("the function permit to calculate the volume of a cylinder", () =>{
 
 
 // EXERCICE 13
-/* ça m'a dépassé */
+describe('clock', () => {
+    beforeAll(() => {
+        jest.useFakeTimers(); 
+        jest.spyOn(console, 'log');
+    });
+
+    afterAll(() => {
+        jest.useRealTimers(); 
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks(); 
+    });
+
+    test('should call console.log every second for the given duration', () => {
+        clock(3); 
+        jest.advanceTimersByTime(1000);
+        expect(console.log).toHaveBeenCalledTimes(2); 
+    });
+});
+
+
 
 
 // EXERCICE 14
